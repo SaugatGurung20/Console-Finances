@@ -106,3 +106,48 @@ return nettotal;
 const nettotal = calculateNetTotal(finances);
 console.log('Total', nettotal);
 
+// The average of the changes in Profit/Losses over the entire period.
+
+function calculateAverageChange (finances) {
+  let netchange = 0;
+
+  for (let i = 1; i < finances.length; i++) {
+    const change = finances[i][1] - finances[i - 1][1];
+    netchange += change;
+  }
+  const averagechange = netchange / (finances.length - 1);
+  return averagechange;
+
+}
+const averagechange = calculateAverageChange(finances);
+console.log('Average change:', averagechange);
+
+// The greatest increase in Profit/Losses (date and amount) over the entire period.
+// The greatest decrease in Profit/Losses (date and amount) over the entire period.
+
+function GreatestChanges(finances) {
+  let greatestIncrease = { date: '', amount: -Infinity };
+  let greatestDecrease = { date: '', amount: Infinity };
+
+  for (let i = 1; i < finances.length; i++) {
+    const change = finances[i][1] - finances[i - 1][1];
+    const currentDate = finances[i][0];
+
+    if (change > greatestIncrease.amount) {
+      greatestIncrease.date = currentDate;
+      greatestIncrease.amount = change;
+    }
+
+    if (change < greatestDecrease.amount) {
+      greatestDecrease.date = currentDate;
+      greatestDecrease.amount = change;
+    }
+  }
+
+  return { greatestIncrease, greatestDecrease };
+}
+
+const { greatestIncrease, greatestDecrease } = GreatestChanges(finances);
+
+console.log('Greatest Increase in Profit/Losses:', greatestIncrease);
+console.log('Greatest Decrease in Profit/Losses:', greatestDecrease);
