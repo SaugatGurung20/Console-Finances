@@ -90,3 +90,6 @@ var finances = [
 console.log('Financial Analysis');
 console.log('------------------')
 
+// The total number of months included in the dataset.
+var total = console.log('Total Months:',finances.length)
+
