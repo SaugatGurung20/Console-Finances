@@ -4,10 +4,10 @@
 This project is about using the concepts i have learnt to create code in javascrpit for analyzing the financial records of a company.
 
 ## Installation guide
-- Go to this website. 
+- Go to this website. https://saugatgurung20.github.io/Console-Finances/
 
 ## Usage
-- To use this just got to this website. 
+- To use this just got to this website. https://saugatgurung20.github.io/Console-Finances/
 - Then left-click on the website
 - Go to inspect
 - Go to console and you should see the results
